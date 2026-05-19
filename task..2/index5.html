@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPMS - Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    body{
+      background:#efefef;
+    }
+    .wrapper{
+      display:flex;
+      height:100vh;
+    }
+    .sidebar{
+      width:220px;
+      background:#2f3640;
+      color:#fff;
+      padding-top:15px;
+    }
+    .logo{
+      padding:0 15px 20px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      font-size:14px;
+    }
+    .logo i{
+      color:#0d6efd;
+      margin-right:5px;
+    }
+    .menu{
+      margin-top:10px;
+    }
+    .menu ul{
+      list-style:none;
+    }
+    .menu ul li{
+      padding:12px 15px;
+      font-size:12px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .menu ul li:hover,
+    .menu ul li.active{
+      background:#0d6efd;
+    }
+    .menu ul li a{
+      display:block;
+      color:#fff;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    .menu ul li a:hover{
+      color:#fff;
+    }
+    .menu ul li i{
+      width:18px;
+    }
+    .main{
+      flex:1;
+      padding:15px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #ddd;
+      padding:12px;
+    }
+    .card-title{
+      font-size:12px;
+      color:#666;
+      margin-bottom:15px;
+      border-bottom:1px solid #eee;
+      padding-bottom:8px;
+    }
+    .card-title i{
+      margin-right:5px;
+    }
+    .note{
+      color:#999;
+      font-size:10px;
+    }
+    .search-box{
+      display:flex;
+      justify-content:center;
+      margin:30px 0;
+    }
+    .search-box input{
+      width:380px;
+      height:32px;
+      border:1px solid #ccc;
+      padding:5px 10px;
+      outline:none;
+      font-size:12px;
+    }
+    .search-btn{
+      width:40px;
+      border:none;
+      background:#6c757d;
+      color:#fff;
+      cursor:pointer;
+      font-size:12px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:11px;
+    }
+    table th,
+    table td{
+      border:1px solid #e5e5e5;
+      padding:7px;
+      text-align:center;
+    }
+    table th{
+      background:#f7f7f7;
+      color:#444;
+    }
+    table td{
+      color:#666;
+    }
+    .status{
+      color:#fff;
+      padding:2px 8px;
+      border-radius:10px;
+      font-size:9px;
+      display:inline-block;
+      min-width:48px;
+    }
+    .leave{
+      background:#dc3545;
+    }
+    .parked{
+      background:#28a745;
+    }
+    .charge{
+      color:#f0ad4e;
+      font-weight:600;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="sidebar">
+    <div class="logo">
+       <i class="fa-solid fa-car"></i> SPMS Panel
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="dashboard.html"> <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+        <li><a href="category.html"> <i class="fa-solid fa-folder"></i> Category</a></li>
+        <li><a href="vehicle.html"> <i class="fa-solid fa-car-side"></i> Vehicle Entry</a></li>
+        <li><a href="Manage.html"> <i class="fa-solid fa-list"></i> Manage Vehicles</a></li>
+        <li><a href="dashboard.html"> <i class="fa-solid fa-file-lines"></i> Reports</a></li>
+        <li class="active"><a href="search.html"> <i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+        <li><a href="Accountsetting.html"> <i class="fa-solid fa-gear"></i> Account Setting</a></li>
+        <li><a href="admin.html"> <i class="fa-solid fa-power-off"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="main">
+    <div class="card">
+      <div class="card-title">
+        
+        <i class="fa-solid fa-magnifying-glass"></i> Search Data
+        <span class="note">| Only the records of the last 30 days are available here</span>
+      </div>
+      <div class="search-box">
+        <input type="text" value="2306">
+        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Vehicle Number</th>
+            <th>Type</th>
+            <th>Area</th>
+            <th>Charge</th>
+            <th>Arrival Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>34</td>
+            <td>GBN-2306</td>
+            <td>Car Type 101</td>
+            <td>1</td>
+            <td class="charge">$ 7.00</td>
+            <td>2022-07-04 09:29:15</td>
+            <td>
+              <span class="status leave">Leaved</span>
+            </td>
+          </tr>
+          <tr>
+            <td>36</td>
+            <td>GBN-2306</td>
+            <td>Car</td>
+            <td>2</td>
+            <td class="charge">$ 4.00</td>
+            <td>2022-07-04 10:43:15</td>
+            <td>
+              <span class="status parked">Parked</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

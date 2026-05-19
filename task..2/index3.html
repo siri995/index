@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMS Dashboard</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    body{
+      background:#ececec;
+    }
+    .wrapper{
+      display:flex;
+      height:100vh;
+    }
+    .sidebar{
+      width:220px;
+      background:#2f3640;
+      color:#fff;
+      padding-top:15px;
+    }
+    .logo{
+      padding:0 15px 20px;
+      font-size:14px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    .logo i{
+      color:#0d6efd;
+      margin-right:5px;
+    }
+    .menu{
+      margin-top:10px;
+    }
+    .menu ul{
+      list-style:none;
+    }
+    .menu ul li{
+      padding:12px 15px;
+      font-size:13px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .menu ul li i{
+      width:18px;
+    }
+    .menu ul li:hover,
+    .menu ul li.active{
+      background:#0d6efd;
+    }
+    .menu ul li a{
+      display:block;
+      color:#fff;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    .menu ul li a:hover{
+      color:#fff;
+    }
+    .main{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar{
+      height:40px;
+      background:#343a40;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding:0 15px;
+      font-size:12px;
+    }
+    .topbar i{
+      color:#0d6efd;
+      margin-right:5px;
+    }
+    .logout-btn{
+      background:#0d6efd;
+      border:none;
+      color:#fff;
+      padding:4px 10px;
+      margin-left:10px;
+      font-size:11px;
+      border-radius:2px;
+      cursor:pointer;
+    }
+    .dashboard{
+      padding:22px;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      height:150px;
+      color:#fff;
+      padding:14px;
+      position:relative;
+      border-radius:10px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .card .number{
+      font-size:18px;
+      font-weight:500;
+    }
+    .card .emoji{
+      position:absolute;
+      right:18px;
+      top:18px;
+      font-size:52px;
+      opacity:0.9;
+    }
+    .card .title{
+      font-size:11px;
+      margin-top:5px;
+    }
+    .blue{
+      background:#0d6efd;
+    }
+    .dark{
+      background:#343a40;
+    }
+    .red{
+      background:#dc3545;
+    }
+    .yellow{
+      background:#ffc107;
+    }
+    .gray{
+      background:#6c757d;
+    }
+    .cyan{
+      background:#17a2b8;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="sidebar">
+    <div class="logo">
+       <i class="fa-solid fa-car"></i> PMS Panel
+    </div>
+    <div class="menu">
+      <ul>
+        <li class="active"><a href="dashboard.html"> <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+        <li><a href="category.html"> <i class="fa-solid fa-folder"></i> Category</a></li>
+        <li><a href="vehicle.html"> <i class="fa-solid fa-car-side"></i> Vehicle Entry</a></li>
+        <li><a href="Manage.html"> <i class="fa-solid fa-list"></i> Manage Vehicles</a></li>
+        <li><a href="dashboard.html"> <i class="fa-solid fa-file-lines"></i> Reports</a></li>
+        <li><a href="search.html"> <i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+        <li><a href="Accountsetting.html"> <i class="fa-solid fa-gear"></i> Account Setting</a></li>
+        <li><a href="admin.html"> <i class="fa-solid fa-power-off"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="main">
+    <div class="topbar">
+      <span> <i class="fa-solid fa-circle-user"></i> Welcome, Administrator</span>
+      <button class="logout-btn">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+    <div class="dashboard">
+      <div class="cards">
+        <div class="card cyan">
+          <div class="number">1</div>
+          <span class="emoji">🚗</span>
+          <div class="title">Vehicles Parked</div>
+        </div>
+        <div class="card dark">
+          <div class="number">2</div>
+          <span class="emoji">🚙</span>
+          <div class="title">Departed Vehicles</div>
+        </div>
+        <div class="card red">
+          <div class="number">6</div>
+          <span class="emoji">📦</span>
+          <div class="title">Available Category</div>
+        </div>
+        <div class="card yellow">
+          <div class="number">$ 18.00</div>
+          <span class="emoji">💰</span>
+          <div class="title">Total Earnings</div>
+        </div>
+        <div class="card gray">
+          <div class="number">3</div>
+          <span class="emoji">📊</span>
+          <div class="title">Total Records</div>
+        </div>
+        <div class="card blue">
+          <div class="number">74</div>
+          <span class="emoji">✅</span>
+          <div class="title">Total Parking Slots</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="category.html"></a>
+</body>
+</html>
